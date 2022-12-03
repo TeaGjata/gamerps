@@ -1,15 +1,15 @@
 alert("Welcome to our game!")
-const playerSelection = "";
-const computerSelection = "";
+let playerSelection = "";
+let computerSelection = "";
 game();
 
 function game() {
-    const win = 0;
-    const lost = 0;
-    const draw = 0;
-    for (const i = 0; i < 5; i++) {
+    let win = 0;
+    let lost = 0;
+    let draw = 0;
+    for (let i = 0; i < 5; i++) {
         playerSelection = window.prompt("To play this game you have to select a choice: rock, paper or scissors?", "");
-        const string = playRound(playerSelection, computerSelection);
+        let string = playRound(playerSelection, computerSelection);
         if (string.match(/Win/g) == "Win") {
             alert(string);
             win++;
@@ -35,7 +35,7 @@ function game() {
     function playRound(playerSelection, computerSelection) {
 
         computerSelection = computerPlay();
-        const option = playerChoice(playerSelection);
+        let option = playerChoice(playerSelection);
 
         switch (option) {
             case "rock":
@@ -72,7 +72,7 @@ function game() {
     }
 
     function computerPlay() {
-        const computer = Math.random() * 151;
+        let computer = Math.random() * 151;
         if (computer <= 100) {
             return "rock";
         } else if (computer <= 50) {
